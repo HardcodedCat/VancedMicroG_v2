@@ -1,0 +1,37 @@
+/*
+ * SPDX-FileCopyrightText: 2013, microG Project Team
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+buildscript {
+    ext.androidMinSdk = 23
+    ext.androidTargetSdk = 30
+    ext.androidCompileSdk = 31
+
+    repositories {
+        jcenter()
+        google()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"
+        classpath "com.squareup.wire:wire-gradle-plugin:3.2.2"
+    }
+}
+
+allprojects {
+    apply plugin: 'idea'
+
+    group = 'org.microg.gms'
+    version = "0.2.24.220220"
+    ext.appVersionCode = 220220001
+    ext.isReleaseVersion = false
+}
+
+subprojects {
+    repositories {
+        jcenter()
+        google()
+    }
+}
